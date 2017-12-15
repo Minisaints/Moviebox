@@ -5,23 +5,23 @@
 
 <h1>Movies</h1>
 
-@Html.ActionLink("Add Movie", "New", "Movies", null, new { @class= "btn btn-primary Margin" })
+@Html.ActionLink("Add Movie", "New", "Movies", null, new { @class = "btn btn-primary Margin" })
 
-<table id="movies" class="table table-bordered table-responsive table-hover">
-    <thead>
-    <tr>
-        <th>Movies</th>
-        <th>Genre</th>
-        <th>Release Date</th>
-        <th style="width: 80px">Available</th>
-        <th style="width: 40px; text-align: center">Delete</th>
-    </tr>
-    </thead>
-    <tbody>
+<div class="jumbotron jumbotron2">
 
-    </tbody>
-</table>
-
+    <table id="movies" class="table table-bordered table-responsive table-hover">
+        <thead>
+            <tr>
+                <th>Movies</th>
+                <th>Genre</th>
+                <th>Release Date</th>
+                <th style="width: 80px">Available</th>
+                <th style="width: 40px; text-align: center">Delete</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
 @section scripts
 {
     @*Use jQuery to call out API to remove it from the list.*@
@@ -33,22 +33,22 @@
                 {
                     ajax: {
                         url: "/api/movies",
-                        dataSrc: "" 
+                        dataSrc: ""
                     },
                     columns: [
                         {
                             data: "name",
-                            render: function(data, type, movie) {
+                            render: function (data, type, movie) {
                                 return "<a href='/movies/edit/" + movie.id + "'>" + movie.name + "</a>";
                             }
-                            
+
                         },
                         {
                             data: "genre.name"
                         },
                         {
                             data: "releaseDate",
-                            render: function(d) {
+                            render: function (d) {
                                 return moment(d).format("Do MMMM YYYY");
                             }
                         },
@@ -58,7 +58,7 @@
                         {
                             data: "id",
                             orderable: false,
-                            render: function(data) {
+                            render: function (data) {
                                 return "<button class='btn btn-danger btn-sm js-delete' data-movie-id=" + data + ">Delete</button>";
                             }
                         }
@@ -80,7 +80,7 @@
                                     toastr.success("Movie record deleted.");
                                     table.row(button.parents("tr")).remove().draw();
                                 },
-                                error: function() {
+                                error: function () {
                                     toastr.error("Unable to delete Movie record.");
 
                                 }

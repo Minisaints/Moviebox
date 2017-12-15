@@ -192,7 +192,6 @@ E:\Repository-Content\c-sharp\C#\MovieBox\MovieBox\bin\Microsoft.AI.DependencyCo
 E:\Repository-Content\c-sharp\C#\MovieBox\MovieBox\bin\Microsoft.AI.ServerTelemetryChannel.xml
 E:\Repository-Content\c-sharp\C#\MovieBox\MovieBox\bin\Microsoft.AI.WindowsServer.xml
 E:\Repository-Content\c-sharp\C#\MovieBox\MovieBox\bin\Microsoft.AI.Web.xml
-E:\Repository-Content\c-sharp\C#\MovieBox\MovieBox\obj\Release\MovieBox.csprojResolveAssemblyReference.cache
 E:\Repository-Content\c-sharp\C#\MovieBox\MovieBox\obj\Release\MovieBox.Migrations.InitialCreate.resources
 E:\Repository-Content\c-sharp\C#\MovieBox\MovieBox\obj\Release\MovieBox.Migrations.CustomerModel.resources
 E:\Repository-Content\c-sharp\C#\MovieBox\MovieBox\obj\Release\MovieBox.Migrations.AddIsSubscribedToCustomer.resources

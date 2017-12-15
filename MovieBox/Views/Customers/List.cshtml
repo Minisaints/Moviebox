@@ -7,18 +7,20 @@
 
 @Html.ActionLink("Add Customer", "New", "Customers", null, new { @class = "btn btn-primary Margin" })
 
-<table id="rentals" class="table table-bordered table-responsive table-hover">
-    <thead>
-        <tr>
-            <th>Customer Name</th>
-            <th>Membership Type</th>
-            <th>Date of Birth</th>
-            <th style="width: 40px; text-align: center">Delete</th>
-        </tr>
-    </thead>
-    <tbody></tbody>
-</table>
+<div class="jumbotron jumbotron2">
 
+    <table id="rentals" class="table table-bordered table-responsive table-hover">
+        <thead>
+            <tr>
+                <th>Customer Name</th>
+                <th>Membership Type</th>
+                <th>Date of Birth</th>
+                <th style="width: 40px; text-align: center">Delete</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
 @*}*@
 
 @section scripts
@@ -45,7 +47,7 @@
                             data: "membershipType.name"
                         }, {
                             data: "birthDate",
-                            render: function(d) {
+                            render: function (d) {
                                 return moment(d).format("Do MMMM YYYY");
                             }
                         },

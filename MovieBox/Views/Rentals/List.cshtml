@@ -8,6 +8,8 @@
 
 @Html.ActionLink("Add Rental", "New", "Rentals", null, new { @class = "btn btn-primary Margin" })
 
+<div class="jumbotron jumbotron2">
+
 <table id="rentals" class="table table-bordered table-responsive table-hover">
     <thead>
     <tr>
@@ -20,6 +22,7 @@
     </thead>
     <tbody></tbody>
 </table>
+</div>
 
 @section scripts {
     @Scripts.Render("~/bundles/rentaljs")
