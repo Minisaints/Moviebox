@@ -1,0 +1,51 @@
+﻿@model MovieBox.ViewModels.CustomerFormViewModel
+
+@{
+    ViewBag.Title = Model.Title;
+}
+
+<h2>@Model.Title</h2>
+
+@*Used for when the user submits the form,
+    the request will be handled by the action method provided.
+    *** Also renders the <form> tag so use @using block ***
+*@
+
+@using (Html.BeginForm("Save", "Customers"))
+{
+    @*@Html.ValidationSummary(false, "Please resolve the issues.", new { @class="alert alert-danger"})*@
+    <div class="alert alert-info">
+        Please note: All fields are required.
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(a => a.Customer.Name)
+        @Html.TextBoxFor(a => a.Customer.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Customer.Name)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(a => a.Customer.MembershipTypeId)
+        @Html.DropDownListFor(a => a.Customer.MembershipTypeId, new SelectList(Model.MembershipType, "Id", "Name"), "Select Membership Type", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Customer.MembershipTypeId)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(a => a.Customer.BirthDate)
+        @Html.TextBoxFor(a => a.Customer.BirthDate, "{0:d MMM yyyy}", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Customer.BirthDate)
+
+    </div>
+
+    <div class="checkbox">
+        <label>
+            @Html.CheckBoxFor(m => m.Customer.IsSubscribedToNewsletter) Subscribe to Newsletter?
+        </label>
+    </div>
+    @Html.HiddenFor(m => m.Customer.Id)
+    @Html.AntiForgeryToken()
+    <button type="submit" class="btn btn-primary">Save</button>
+}
+
+@section scripts {
+    @*enable client-side validation*@
+    @Scripts.Render("~/bundles/jqueryval")
+}

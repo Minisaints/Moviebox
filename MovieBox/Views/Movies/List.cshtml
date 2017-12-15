@@ -1,0 +1,93 @@
+﻿@model MovieBox.ViewModels.MovieViewModel
+@{
+    ViewBag.Title = "Random";
+}
+
+<h1>Movies</h1>
+
+@Html.ActionLink("Add Movie", "New", "Movies", null, new { @class= "btn btn-primary Margin" })
+
+<table id="movies" class="table table-bordered table-responsive table-hover">
+    <thead>
+    <tr>
+        <th>Movies</th>
+        <th>Genre</th>
+        <th>Release Date</th>
+        <th style="width: 80px">Available</th>
+        <th style="width: 40px; text-align: center">Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+</table>
+
+@section scripts
+{
+    @*Use jQuery to call out API to remove it from the list.*@
+    <script>
+        $(document).ready(function () {
+
+            ////////////// movies are fetched from our API
+            var table = $("#movies").DataTable(
+                {
+                    ajax: {
+                        url: "/api/movies",
+                        dataSrc: "" 
+                    },
+                    columns: [
+                        {
+                            data: "name",
+                            render: function(data, type, movie) {
+                                return "<a href='/movies/edit/" + movie.id + "'>" + movie.name + "</a>";
+                            }
+                            
+                        },
+                        {
+                            data: "genre.name"
+                        },
+                        {
+                            data: "releaseDate",
+                            render: function(d) {
+                                return moment(d).format("Do MMMM YYYY");
+                            }
+                        },
+                        {
+                            data: "availableAmount"
+                        },
+                        {
+                            data: "id",
+                            orderable: false,
+                            render: function(data) {
+                                return "<button class='btn btn-danger btn-sm js-delete' data-movie-id=" + data + ">Delete</button>";
+                            }
+                        }
+                    ]
+                });
+
+            //////////////////////////////////////////////////
+
+            $("#movies").on("click", ".js-delete",
+                function () {
+                    var button = $(this);
+
+                    bootbox.confirm("Are you sure you want to delete the movie?", function (result) {
+                        if (result) {
+                            $.ajax({
+                                url: "/api/movies/" + button.attr("data-movie-id"),
+                                method: "DELETE",
+                                success: function () {
+                                    toastr.success("Movie record deleted.");
+                                    table.row(button.parents("tr")).remove().draw();
+                                },
+                                error: function() {
+                                    toastr.error("Unable to delete Movie record.");
+
+                                }
+                            });
+                        }
+                    });
+                });
+        });
+    </script>
+}

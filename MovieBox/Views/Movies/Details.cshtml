@@ -1,0 +1,32 @@
+﻿@using System.Diagnostics
+@model MovieBox.Models.Movie
+
+@{
+    ViewBag.Title = "Details";
+
+}
+
+<h2>@Model.Name</h2>
+
+<table class="table table-bordered table-responsive table-hover">
+    <thead>
+        <tr>
+            <th>Genre</th>
+            <th>Release Date</th>
+            <th>Date Added</th>
+            <th>Number in Stock</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>@Model.Genre.Name</td>
+                <td>
+                    @{
+                        Debug.Assert(Model.ReleaseDate != null, "Model.ReleaseDate != null");
+                    }
+                    @Model.ReleaseDate.Value.ToLongDateString()</td>
+                <td>@Model.DateAdded.ToLongDateString()</td>
+            <td>@Model.Stock</td>
+        </tr>
+    </tbody>
+</table>

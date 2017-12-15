@@ -1,0 +1,87 @@
+﻿@model IEnumerable<MovieBox.Models.Customer>
+@{
+    ViewBag.Title = "Customers";
+}
+
+<h2>Customers</h2>
+
+@Html.ActionLink("Add Customer", "New", "Customers", null, new { @class = "btn btn-primary Margin" })
+
+<table id="rentals" class="table table-bordered table-responsive table-hover">
+    <thead>
+        <tr>
+            <th>Customer Name</th>
+            <th>Membership Type</th>
+            <th>Date of Birth</th>
+            <th style="width: 40px; text-align: center">Delete</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+@*}*@
+
+@section scripts
+{
+    @*Use jQuery to call out API to remove it from the list.*@
+    <script>
+        $(document).ready(function () {
+
+            ////////////// customers are fetched from our API
+            var table = $("#rentals").DataTable(
+                {
+                    ajax: {
+                        url: "/api/customers",
+                        dataSrc: ""
+                    },
+                    columns: [
+                        {
+                            data: "name",
+                            render: function (data, type, customer) {
+                                return "<a href='/customers/edit/" + customer.id + "'>" + customer.name + "</a>";
+                            }
+                        },
+                        {
+                            data: "membershipType.name"
+                        }, {
+                            data: "birthDate",
+                            render: function(d) {
+                                return moment(d).format("Do MMMM YYYY");
+                            }
+                        },
+                        {
+                            data: "id",
+                            orderable: false,
+                            render: function (data) {
+                                return "<button class='btn btn-danger btn-sm js-delete' data-customer-id=" + data + ">Delete</button>";
+                            }
+                        }
+                    ]
+                });
+
+            //////////////////////////////////////////////////
+
+            $("#rentals").on("click", ".js-delete",
+                function () {
+                    var button = $(this);
+
+                    bootbox.confirm("Are you sure you want to delete the customer?", function (result) {
+                        if (result) {
+                            $.ajax({
+                                url: "/api/customers/" + button.attr("data-customer-id"),
+                                method: "DELETE",
+                                success: function () {
+                                    toastr.success("Customer record deleted.");
+                                    table.row(button.parents("tr")).remove().draw();
+                                },
+                                error: function () {
+                                    toastr.error("Unable to delete Customer record.");
+
+                                }
+                            });
+                        }
+                    });
+                });
+        });
+    </script>
+}

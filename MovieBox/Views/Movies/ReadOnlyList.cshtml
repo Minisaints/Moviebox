@@ -1,0 +1,53 @@
+﻿@model MovieBox.ViewModels.MovieViewModel
+@{
+    ViewBag.Title = "Random";
+}
+
+<h1>Movies</h1>
+
+@Html.ActionLink("Add Movie", "New", "Movies", null, new { @class = "btn btn-primary Margin" })
+
+<table id="movies" class="table table-bordered table-responsive table-hover ">
+    <thead>
+    <tr>
+        <th>Movies</th>
+        <th>Genre</th>
+        <th>Release Date</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+</table>
+
+@section scripts
+{
+    @*Use jQuery to call out API to remove it from the list.*@
+    <script>
+        $(document).ready(function() {
+
+            ////////////// movies are fetched from our API
+            var table = $("#movies").DataTable(
+                {
+                    ajax: {
+                        url: "/api/movies",
+                        dataSrc: ""
+                    },
+                    columns: [
+                        {
+                            data: "name"
+                        },
+                        {
+                            data: "genre.name"
+                        },
+                        {
+                            data: "releaseDate",
+                            render: function (d) {
+                                return moment(d).format("Do MMMM YYYY");
+                            }
+                        }
+                    ]
+                });
+        });
+    </script>
+}

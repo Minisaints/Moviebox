@@ -1,0 +1,10 @@
+﻿@model MovieBox.Models.Customer
+@{
+    ViewBag.Title = "Details";
+}
+
+<h1>@Model.Name</h1>
+
+<h4>Birth Date: @Model.BirthDate.Value.ToShortDateString()</h4>
+<h4>Membership Type: @Model.MembershipType.Name</h4>
+

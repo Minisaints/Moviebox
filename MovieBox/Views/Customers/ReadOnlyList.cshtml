@@ -1,0 +1,54 @@
+﻿@model IEnumerable<MovieBox.Models.Customer>
+@{
+    ViewBag.Title = "Customers";
+}
+
+<h2>Customers</h2>
+
+@Html.ActionLink("Add Customer", "New", "Customers", null, new { @class = "btn btn-primary Margin" })
+
+<table id="rentals" class="table table-bordered table-responsive table-hover">
+        <thead>
+            <tr>
+                <th>Customer</th>
+                <th>Date of Birth</th>
+                <th>Membership Type</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+@*}*@
+
+@section scripts
+{
+    @*Use jQuery to call out API to remove it from the list.*@
+    <script>
+        $(document).ready(function () {
+
+            ////////////// customers are fetched from our API
+            var table = $("#rentals").DataTable(
+            {
+                ajax: {
+                    url: "/api/customers",
+                    dataSrc: "" 
+                    },
+                columns: [
+                    {
+                        data: "name"
+                    },
+                    {
+                        data: "birthDate",
+                        render: function(d) {
+                            return moment(d).format("Do MMMM YYYY");
+                        }
+                    },
+                    {
+                        data: "membershipType.name"
+                    }
+                ]
+                });
+        });
+    </script>
+}
