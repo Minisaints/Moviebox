@@ -34,6 +34,7 @@ namespace MovieBox
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap-lumen.css",
+                      "~/Content/bootstrap-social.css",
                       "~/Content/typeahead.css",
                       "~/Content/site.css",
                       "~/Content/toastr.css",

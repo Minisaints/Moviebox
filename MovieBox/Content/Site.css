@@ -26,8 +26,9 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
 */
-.dl-horizontal dt {
+.dl-horizontal dt, .dl-horizontal dd {
     white-space: normal;
+    font-size: 18px;
 }
 
 /* Set width on the form input elements since they're 100% wide by default */
@@ -121,7 +122,10 @@ label.error {
 }
 
 .gallery {
-    background-color: #333;
+    background-color: transparent;
+    margin: 0px auto;
+    position: relative;
+    text-align: center;
 }
 
 @media screen and (max-width: 1200px) {
@@ -150,21 +154,32 @@ label.error {
 
 .jumbotron {
     background-color: #444;
-    border: 2px solid #222;
+    border: 1px solid #222;
+    
 }
 
 .container .jumbotron, .container-fluid .jumbotron {
-    -ms-border-radius: 50px;
-    border-radius: 50px;
-    margin-top: 50px;
+    margin-top: 10px;
+    border-radius: 0px;
 }
 
 .jumbotron2 {
     background-color: #444;
-    -ms-border-radius: 0px !important;
-    border-radius: 0px !important;
     margin-top: 0px !important;
     border: 1px solid #222 !important;
+}
+
+@media screen and (min-width: 768px) {
+    .jumbotron {
+        padding-top: 38px;
+        padding-bottom: 38px;
+    }
+
+    .jumbotron3 {
+        padding-top: 24px;
+        padding-bottom: 5px;
+
+    }
 }
 
 .table-hover > tbody {
@@ -182,4 +197,42 @@ td {
 tr {
     background-color: #fff;
     color: #333;
+}
+
+/***********SMALL MOVIES*************/
+
+.movie_container {
+    display: flex;
+    display: inline-block;
+    margin-bottom: 2.5px;
+}
+
+.movie {
+    width: 200px;
+    height: 270px;
+    display: inline-block;
+}
+
+.frontTitle {
+    text-align: center;
+    height: 40px;
+    width: 100%;
+    font-size: 25px;
+    border: 1px solid #222;
+    background-color: #a52a2a;
+    margin-top: 45px;
+}
+
+.frontTitle_latestRelease {
+    
+}
+
+.frontTitle_popularMovies {
+    margin-top: 10px;
+}
+
+.radio input[type="radio"], .radio-inline input[type="radio"], .checkbox input[type="checkbox"], .checkbox-inline input[type="checkbox"] {
+ 
+    margin-left: 0px;
+
 }

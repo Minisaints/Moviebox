@@ -226,3 +226,4 @@ E:\Repository-Content\c-sharp\C#\MovieBox\MovieBox\obj\Release\MovieBox.csproj.G
 E:\Repository-Content\c-sharp\C#\MovieBox\MovieBox\obj\Release\MovieBox.csproj.CoreCompileInputs.cache
 E:\Repository-Content\c-sharp\C#\MovieBox\MovieBox\obj\Release\MovieBox.dll
 E:\Repository-Content\c-sharp\C#\MovieBox\MovieBox\obj\Release\MovieBox.pdb
+E:\Repository-Content\c-sharp\C#\MovieBox\MovieBox\obj\Release\MovieBox.csprojResolveAssemblyReference.cache
