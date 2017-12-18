@@ -2,7 +2,7 @@
     padding-top: 50px;
     padding-bottom: 20px;
     background-color: #333;
-    color: #fff;
+    /*background-image: url("/Content/images/bg.jpg");*/
     font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
@@ -23,12 +23,16 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     padding-right: 15px;
 }
 
+.dataTables_info {
+    color: #fff;
+}
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
 */
 .dl-horizontal dt, .dl-horizontal dd {
     white-space: normal;
     font-size: 18px;
+    color: #fff;
 }
 
 /* Set width on the form input elements since they're 100% wide by default */
@@ -49,6 +53,22 @@ textarea {
 .field-validation-error,
 label.error {
     color: red;
+}
+
+label {
+    color: #fff;
+}
+
+.checkbox label {
+    padding-left: 0px;
+}
+
+.checkbox_customer {
+    padding-left: 20px;
+}
+
+.checkbox_login {
+    padding-left: 0px;
 }
 
 .input-validation-error {
@@ -147,7 +167,7 @@ label.error {
 
 .list-group-item {
     background-color: #666;
-    color: white;
+    color: #222;
     border: 1px solid black;
     margin-top: 2px;
 }
@@ -159,7 +179,7 @@ label.error {
 }
 
 .container .jumbotron, .container-fluid .jumbotron {
-    margin-top: 10px;
+    margin-top: 0px;
     border-radius: 0px;
 }
 
@@ -220,7 +240,8 @@ tr {
     font-size: 25px;
     border: 1px solid #222;
     background-color: #a52a2a;
-    margin-top: 45px;
+    margin-top: 40px;
+    color: #fff;
 }
 
 .frontTitle_latestRelease {
@@ -232,7 +253,60 @@ tr {
 }
 
 .radio input[type="radio"], .radio-inline input[type="radio"], .checkbox input[type="checkbox"], .checkbox-inline input[type="checkbox"] {
- 
     margin-left: 0px;
+ margin-left: -20px;
+}
 
+.checkbox_login {
+    margin-left: 20px;
+}
+
+/**********TEST**********/
+
+.computer_Container {
+    
+}
+
+.icon {
+    float: right;
+    height: 30px;
+    width: 30px;
+    background-image:url(images/info.png);
+    background-repeat: no-repeat;
+    background-size: 30px 30px;  
+    position: absolute;
+}
+
+.icon-tower {
+    right: 350px;
+    top: 400px;
+}
+
+.icon-monitor {
+    right: 600px;
+    top: 370px;
+}
+
+.message {
+    z-index: 1;
+    height: 50px;
+    width: 130px;
+    border: 3px solid #333;
+    background-color: #777;
+    background-image: none;
+    color: #fff;
+    border-radius: 10px;
+    font-size: 15px;
+    display: none;
+}
+
+.message-monitor {
+    right: 490px;
+    top: 320px;
+    font-size: 14px;
+}
+
+.message-tower {
+   right: 240px;
+    top: 350px; 
 }

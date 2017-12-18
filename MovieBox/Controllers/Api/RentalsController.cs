@@ -9,7 +9,6 @@ using System.Web.Http;
 
 namespace MovieBox.Controllers.Api
 {
-    //[Authorize(Roles = RoleName.IsAdministrator)]
     public class RentalsController : ApiController
     {
         private readonly ApplicationDbContext _context;

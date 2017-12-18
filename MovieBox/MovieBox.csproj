@@ -553,6 +553,7 @@
     <Content Include="Content\toastr.less" />
     <Content Include="AppSettings.config" />
     <None Include="Scripts\jquery-1.12.4.intellisense.js" />
+    <Content Include="Scripts\Customer\customerList.js" />
     <Content Include="Scripts\DataTables\autoFill.bootstrap.js" />
     <Content Include="Scripts\DataTables\autoFill.bootstrap.min.js" />
     <Content Include="Scripts\DataTables\autoFill.foundation.js" />
@@ -617,6 +618,7 @@
     <Content Include="Scripts\DataTables\responsive.foundation.min.js" />
     <Content Include="Scripts\DataTables\responsive.jqueryui.js" />
     <Content Include="Scripts\DataTables\responsive.jqueryui.min.js" />
+    <Content Include="Scripts\Home\home.js" />
     <Content Include="Scripts\jquery-1.12.4.js" />
     <Content Include="Scripts\jquery-1.12.4.min.js" />
     <Content Include="Scripts\jquery-1.12.4.min.map" />
@@ -692,7 +694,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Content\images\Movies_Popular\" />
     <Folder Include="Properties\PublishProfiles\" />
-    <Folder Include="Scripts\Customer\" />
     <Folder Include="Scripts\Movies\" />
   </ItemGroup>
   <ItemGroup>

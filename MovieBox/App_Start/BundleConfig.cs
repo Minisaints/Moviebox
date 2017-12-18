@@ -24,6 +24,12 @@ namespace MovieBox
             bundles.Add(new ScriptBundle("~/bundles/rentaljs").Include(
                         "~/Scripts/Rentals/rental.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/homejs").Include(
+                "~/Scripts/Home/home.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/customerjs").Include(
+                "~/Scripts/Customer/customerList.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/slideshow").Include(
                         "~/Scripts/slideshow.js"));
 

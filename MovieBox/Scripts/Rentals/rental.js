@@ -44,23 +44,27 @@ $(document).ready(function () {
 
     $("#rentals").on("click", ".js-delete",
         function () {
+
             var button = $(this);
 
-            bootbox.confirm("Are you sure you want to delete the rental?", function (result) {
-                if (result) {
-                    $.ajax({
-                        url: "/api/rentals/" + button.attr("data-rental-id"),
-                        method: "DELETE",
-                        success: function () {
-                            toastr.success("Rental record deleted.");
-                            table.row(button.parents("tr")).remove().draw();
-                        }, error: function () {
-                            toastr.error("Unable to delete Rental record.");
-                        }
-                    });
-                }
-            });
+            bootbox.confirm("Are you sure you want to delete the rental?",
+                function (result) {
+                    if (result) {
+                        $.ajax({
+                            url: "/api/rentals/" + button.attr("data-rental-id"),
+                            method: "DELETE",
+                            success: function () {
+                                toastr.success("Rental record deleted.");
+                                table.row(button.parents("tr")).remove().draw();
+                            },
+                            error: function () {
+                                toastr.error("Unable to delete Rental record.");
+                            }
+                        });
+                    }
+                });
         });
+
 
     // WHEN THE USER CLICKS THE RETURN BUTTON //////////////////////////////
 
