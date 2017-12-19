@@ -1,4 +1,4 @@
-﻿using AutoMapper;
+﻿using Microsoft.AspNetCore.JsonPatch;
 using MovieBox.Dtos;
 using MovieBox.Models;
 using System;
@@ -105,10 +105,9 @@ namespace MovieBox.Controllers.Api
 
         }
 
-        // PUT /api/rentals/1
-        // Using AutoMapper
-        [HttpPut]
-        public IHttpActionResult UpdateRental(int id, RentalUpdateDto rentalUpdateDto)
+        // PATCH /api/rentals/1
+        [HttpPatch]
+        public IHttpActionResult UpdateRental(int id, [FromBody]JsonPatchDocument<Rental> patch)
         {
 
             if (!ModelState.IsValid)
@@ -119,10 +118,7 @@ namespace MovieBox.Controllers.Api
             if (rentalInDb == null)
                 throw new HttpResponseException(HttpStatusCode.NotFound);
 
-            //// check for changes
-            //var changes = _context.ChangeTracker.HasChanges();
-
-            Mapper.Map(rentalUpdateDto, rentalInDb);
+            patch.ApplyTo(rentalInDb);
 
             _context.SaveChanges();
 

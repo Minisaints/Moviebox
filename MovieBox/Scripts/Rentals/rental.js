@@ -74,17 +74,25 @@ $(document).ready(function () {
 
                 var button = $(this);
 
-                var object = {
-                    dateRented: new Date(),
-                    dateReturned: new Date(),
-                    beenReturned: true
-                };
+                //var object = {
+                //    dateRented: new Date(),
+                //    dateReturned: new Date(),
+                //    beenReturned: true
+                //};
+
+                var newObject = [
+                    {
+                        "op": "replace",
+                        "path": "/beenReturned",
+                        "value": "true"
+                    }
+                ];
 
                 $.ajax({
                     url: "/api/rentals/" + button.attr("data-rental-id"),
-                    method: "PUT",
+                    method: "PATCH",
                     contentType: "application/json; charset=utf-8",
-                    data: JSON.stringify(object),
+                    data: JSON.stringify(newObject),
                     success: function () {
                         button.text("Returned");
                         button.removeClass("btn-default js-return").addClass("btn-success js-returned");
@@ -106,17 +114,25 @@ $(document).ready(function () {
 
                 var button = $(this);
 
-                var object = {
-                    dateRented: new Date(),
-                    dateReturned: new Date(),
-                    beenReturned: false
-                };
+                //var object = {
+                //    dateRented: new Date(),
+                //    dateReturned: new Date(),
+                //    beenReturned: false
+                //};
+
+                var newObject = [
+                    {
+                        "op": "replace",
+                        "path": "/beenReturned",
+                        "value": "false"
+                    }
+                ];
 
                 $.ajax({
                     url: "/api/rentals/" + button.attr("data-rental-id"),
-                    method: "PUT",
+                    method: "PATCH",
                     contentType: "application/json; charset=utf-8",
-                    data: JSON.stringify(object),
+                    data: JSON.stringify(newObject),
                     success: function () {
                         button.text("Return");
                         button.removeClass("btn-success js-returned").addClass("btn-default js-return");

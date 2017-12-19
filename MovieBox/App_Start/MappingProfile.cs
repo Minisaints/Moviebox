@@ -17,12 +17,6 @@ namespace MovieBox.App_Start
             Mapper.CreateMap<CustomerDto, Customer>()
                 .ForMember(c => c.Id, opt => opt.Ignore());
 
-            Mapper.CreateMap<RentalDto, Rental>()
-                .ForMember(c => c.Id, opt => opt.Ignore());
-
-            Mapper.CreateMap<RentalUpdateDto, Rental>()
-                .ForMember(c => c.Id, opt => opt.Ignore());
-
             Mapper.CreateMap<MovieDto, Movie>()
                 .ForMember(c => c.Id, opt => opt.Ignore());
 
