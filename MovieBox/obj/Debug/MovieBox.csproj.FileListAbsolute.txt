@@ -99,14 +99,8 @@ E:\Repository-Content\c-sharp\C#\MovieBox\MovieBox\bin\System.Xml.XPath.dll
 E:\Repository-Content\c-sharp\C#\MovieBox\MovieBox\bin\System.Xml.XPath.XDocument.dll
 E:\Repository-Content\c-sharp\C#\MovieBox\MovieBox\bin\Antlr3.Runtime.dll
 E:\Repository-Content\c-sharp\C#\MovieBox\MovieBox\bin\AutoMapper.dll
-E:\Repository-Content\c-sharp\C#\MovieBox\MovieBox\bin\Elmah.dll
 E:\Repository-Content\c-sharp\C#\MovieBox\MovieBox\bin\EntityFramework.dll
 E:\Repository-Content\c-sharp\C#\MovieBox\MovieBox\bin\EntityFramework.SqlServer.dll
-E:\Repository-Content\c-sharp\C#\MovieBox\MovieBox\bin\Glimpse.Ado.dll
-E:\Repository-Content\c-sharp\C#\MovieBox\MovieBox\bin\Glimpse.AspNet.dll
-E:\Repository-Content\c-sharp\C#\MovieBox\MovieBox\bin\Glimpse.Core.dll
-E:\Repository-Content\c-sharp\C#\MovieBox\MovieBox\bin\Glimpse.EF6.dll
-E:\Repository-Content\c-sharp\C#\MovieBox\MovieBox\bin\Glimpse.Mvc5.dll
 E:\Repository-Content\c-sharp\C#\MovieBox\MovieBox\bin\Microsoft.AI.Agent.Intercept.dll
 E:\Repository-Content\c-sharp\C#\MovieBox\MovieBox\bin\Microsoft.AI.DependencyCollector.dll
 E:\Repository-Content\c-sharp\C#\MovieBox\MovieBox\bin\Microsoft.AI.PerfCounterCollector.dll
