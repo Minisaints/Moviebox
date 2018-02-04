@@ -474,6 +474,24 @@
     <Content Include="Content\DataTables\images\sort_desc.png" />
     <Content Include="Content\DataTables\images\sort_desc_disabled.png" />
     <Content Include="Content\DataTables\swf\flashExport.swf" />
+    <Content Include="Content\images\bg.jpg" />
+    <Content Include="Content\images\bg1.jpg" />
+    <Content Include="Content\images\bg2.jpg" />
+    <Content Include="Content\images\image1.jpg" />
+    <Content Include="Content\images\image2.jpg" />
+    <Content Include="Content\images\image3.jpg" />
+    <Content Include="Content\images\info.png" />
+    <Content Include="Content\images\Movies_Popular\1.jpg" />
+    <Content Include="Content\images\Movies_Popular\2.jpg" />
+    <Content Include="Content\images\Movies_Popular\3.jpg" />
+    <Content Include="Content\images\Movies_Popular\4.jpg" />
+    <Content Include="Content\images\Movies_Popular\5.jpg" />
+    <Content Include="Content\images\Movies_Release\1.jpg" />
+    <Content Include="Content\images\Movies_Release\2.jpg" />
+    <Content Include="Content\images\Movies_Release\3.jpg" />
+    <Content Include="Content\images\Movies_Release\4.jpg" />
+    <Content Include="Content\images\Movies_Release\5.jpg" />
+    <Content Include="Content\images\pc.png" />
     <Content Include="Content\themes\base\accordion.css" />
     <Content Include="Content\themes\base\all.css" />
     <Content Include="Content\themes\base\autocomplete.css" />
@@ -674,7 +692,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\images\Movies_Popular\" />
     <Folder Include="Properties\PublishProfiles\" />
     <Folder Include="Scripts\Movies\" />
   </ItemGroup>
