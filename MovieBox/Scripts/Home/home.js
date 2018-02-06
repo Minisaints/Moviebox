@@ -44,4 +44,14 @@
                 $(".message-monitor").hide();
 
             });
+
+        $('.grid').isotope({
+            itemSelector: '.grid-item',
+            masonry: {
+                columnWidth: 10,
+                isFitWidth: true
+            }
+        });
+
+
     });

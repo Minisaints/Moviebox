@@ -15,6 +15,7 @@ namespace MovieBox
                         "~/Scripts/datatables/jquery.datatables.js",
                         "~/Scripts/typeahead.bundle.js",
                         "~/Scripts/moment.js",
+                        "~/Scripts/isotope.pkgd.min.js",
                         "~/Scripts/toastr.js",
                         "~/Scripts/datatables/datatables.bootstrap.js"));
 

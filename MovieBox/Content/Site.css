@@ -107,6 +107,14 @@ label {
     font-size: 20px;
 }
 
+.navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
+    background-color: #444;
+}
+
+.navbar-inverse .navbar-toggle .icon-bar {
+    background-color: #fff;
+}
+
 .navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
     background-color: #333;
     color: #fff;
@@ -150,7 +158,7 @@ label {
 
 @media screen and (max-width: 1200px) {
     .gallery {
-        display: none;
+        /*display: none;*/
     }
 }
 
@@ -223,15 +231,17 @@ tr {
 /***********SMALL MOVIES*************/
 
 .movie_container {
-    display: flex;
-    display: inline-block;
+    /*display: inline-block;*/
     margin-bottom: 2.5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .movie {
     width: 200px;
     height: 270px;
-    display: inline-block;
+    /*display: inline-block;*/
 }
 
 .frontTitle {
