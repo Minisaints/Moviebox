@@ -29,11 +29,7 @@ namespace MovieBox.Controllers.Api
             if (!string.IsNullOrWhiteSpace(query))
                 customersQuery = customersQuery
                     .Where(c => c.Name
-<<<<<<< HEAD
                     .Contains(query));
-=======
-                        .Contains(query));
->>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
 
             var customerDtos = customersQuery
                 .ToList()
@@ -105,15 +101,9 @@ namespace MovieBox.Controllers.Api
 
             _context.Customers.Remove(customerInDb);
             _context.SaveChanges();
-<<<<<<< HEAD
 
 
 
         }
     }
 }
-=======
-        }
-    }
-}
->>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012

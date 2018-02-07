@@ -6,15 +6,10 @@ using System.Web.Mvc;
 
 namespace MovieBox.Controllers
 {
-<<<<<<< HEAD
 
     public class CustomersController : Controller
     {
 
-=======
-    public class CustomersController : Controller
-    {
->>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
         private readonly ApplicationDbContext _context;
 
         public CustomersController()
@@ -29,10 +24,7 @@ namespace MovieBox.Controllers
 
         public ActionResult Index()
         {
-<<<<<<< HEAD
 
-=======
->>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
             //if (MemoryCache.Default["Genres"] == null)
             //{
             //    MemoryCache.Default["Genres"] = _context.Genres.ToList();
@@ -44,23 +36,16 @@ namespace MovieBox.Controllers
                 return View("List");
 
 
-<<<<<<< HEAD
 
             return View("ReadOnlyList");
 
-=======
-            return View("ReadOnlyList");
->>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
         }
 
         //[Route("Customers/Details/{id}")]
 
         public ActionResult Details(int id)
         {
-<<<<<<< HEAD
 
-=======
->>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
             var customer = _context.Customers
                 .Include(b => b.MembershipType)
                 .SingleOrDefault(c => c.Id == id);
@@ -88,10 +73,7 @@ namespace MovieBox.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Save(Customer customer)
         {
-<<<<<<< HEAD
 
-=======
->>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
             if (!ModelState.IsValid)
             {
                 var viewModel = new CustomerFormViewModel()
@@ -121,10 +103,6 @@ namespace MovieBox.Controllers
 
             return RedirectToAction("Index", "Customers");
         }
-<<<<<<< HEAD
-=======
-
->>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
         [Authorize(Roles = RoleName.IsAdministrator)]
         public ActionResult Edit(int id)
         {

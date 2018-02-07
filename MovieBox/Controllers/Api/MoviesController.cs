@@ -9,10 +9,7 @@ using System.Web.Http;
 
 namespace MovieBox.Controllers.Api
 {
-<<<<<<< HEAD
 
-=======
->>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
     public class MoviesController : ApiController
     {
         private readonly ApplicationDbContext _context;
@@ -26,10 +23,7 @@ namespace MovieBox.Controllers.Api
         // Using AutoMapper
         public IHttpActionResult GetMovies(string query = null)
         {
-<<<<<<< HEAD
 
-=======
->>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
             var moviesQuery = _context.Movies
                 .Include(c => c.Genre)
                 .Where(c => c.AvailableAmount > 0);
@@ -104,11 +98,6 @@ namespace MovieBox.Controllers.Api
             _context.Movies.Remove(movieInDb);
             _context.SaveChanges();
         }
-<<<<<<< HEAD
 
     }
 }
-=======
-    }
-}
->>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012

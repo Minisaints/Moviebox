@@ -23,10 +23,7 @@ namespace MovieBox.Controllers.Api
         // Removed AutoMapper
         public IHttpActionResult GetRentals()
         {
-<<<<<<< HEAD
 
-=======
->>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
             var rental = _context.Rentals
                 .Where(c => c.Id != 0)
                 .Include(c => c.Customer).Select(x => new
@@ -42,10 +39,7 @@ namespace MovieBox.Controllers.Api
                 });
 
             return Ok(rental);
-<<<<<<< HEAD
 
-=======
->>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
         }
 
         // GET /api/rentals/1
@@ -108,22 +102,14 @@ namespace MovieBox.Controllers.Api
             _context.SaveChanges();
 
             return Ok();
-<<<<<<< HEAD
 
-=======
->>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
         }
 
         // PATCH /api/rentals/1
         [HttpPatch]
-<<<<<<< HEAD
         public IHttpActionResult UpdateRental(int id, [FromBody]JsonPatchDocument<Rental> patch)
         {
 
-=======
-        public IHttpActionResult UpdateRental(int id, [FromBody] JsonPatchDocument<Rental> patch)
-        {
->>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
             if (!ModelState.IsValid)
                 throw new HttpResponseException(HttpStatusCode.BadRequest);
 
@@ -152,8 +138,4 @@ namespace MovieBox.Controllers.Api
             _context.SaveChanges();
         }
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012

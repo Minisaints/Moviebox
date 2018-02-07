@@ -40,17 +40,9 @@ namespace MovieBox
         {
         }
 
-<<<<<<< HEAD
         public static ApplicationUserManager Create(IdentityFactoryOptions<ApplicationUserManager> options, IOwinContext context) 
         {
             var manager = new ApplicationUserManager(new UserStore<ApplicationUser>(context.Get<ApplicationDbContext>()));
-=======
-        public static ApplicationUserManager Create(IdentityFactoryOptions<ApplicationUserManager> options,
-            IOwinContext context)
-        {
-            var manager =
-                new ApplicationUserManager(new UserStore<ApplicationUser>(context.Get<ApplicationDbContext>()));
->>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
             // Configure validation logic for usernames
             manager.UserValidator = new UserValidator<ApplicationUser>(manager)
             {
@@ -89,11 +81,7 @@ namespace MovieBox
             var dataProtectionProvider = options.DataProtectionProvider;
             if (dataProtectionProvider != null)
             {
-<<<<<<< HEAD
                 manager.UserTokenProvider = 
-=======
-                manager.UserTokenProvider =
->>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
                     new DataProtectorTokenProvider<ApplicationUser>(dataProtectionProvider.Create("ASP.NET Identity"));
             }
             return manager;
@@ -103,19 +91,13 @@ namespace MovieBox
     // Configure the application sign-in manager which is used in this application.
     public class ApplicationSignInManager : SignInManager<ApplicationUser, string>
     {
-<<<<<<< HEAD
         public ApplicationSignInManager(ApplicationUserManager userManager, IAuthenticationManager authenticationManager)
-=======
-        public ApplicationSignInManager(ApplicationUserManager userManager,
-            IAuthenticationManager authenticationManager)
->>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
             : base(userManager, authenticationManager)
         {
         }
 
         public override Task<ClaimsIdentity> CreateUserIdentityAsync(ApplicationUser user)
         {
-<<<<<<< HEAD
             return user.GenerateUserIdentityAsync((ApplicationUserManager)UserManager);
         }
 
@@ -125,16 +107,3 @@ namespace MovieBox
         }
     }
 }
-=======
-            return user.GenerateUserIdentityAsync((ApplicationUserManager) UserManager);
-        }
-
-        public static ApplicationSignInManager Create(IdentityFactoryOptions<ApplicationSignInManager> options,
-            IOwinContext context)
-        {
-            return new ApplicationSignInManager(context.GetUserManager<ApplicationUserManager>(),
-                context.Authentication);
-        }
-    }
-}
->>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012

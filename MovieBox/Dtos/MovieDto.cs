@@ -5,10 +5,7 @@ namespace MovieBox.Dtos
 {
     public class MovieDto
     {
-<<<<<<< HEAD
 
-=======
->>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
         public int Id { get; set; }
 
         [Required]
@@ -31,9 +28,6 @@ namespace MovieBox.Dtos
         [Required]
         [Range(0, 20, ErrorMessage = "The field Number in Stock must be between 0 - 20.")]
         public byte? AvailableAmount { get; set; }
-<<<<<<< HEAD
 
-=======
->>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
     }
 }

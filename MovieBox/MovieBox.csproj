@@ -474,7 +474,6 @@
     <Content Include="Content\DataTables\images\sort_desc.png" />
     <Content Include="Content\DataTables\images\sort_desc_disabled.png" />
     <Content Include="Content\DataTables\swf\flashExport.swf" />
-<<<<<<< HEAD
     <Content Include="Content\images\bg.jpg" />
     <Content Include="Content\images\bg1.jpg" />
     <Content Include="Content\images\bg2.jpg" />
@@ -493,8 +492,6 @@
     <Content Include="Content\images\Movies_Release\4.jpg" />
     <Content Include="Content\images\Movies_Release\5.jpg" />
     <Content Include="Content\images\pc.png" />
-=======
->>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
     <Content Include="Content\themes\base\accordion.css" />
     <Content Include="Content\themes\base\all.css" />
     <Content Include="Content\themes\base\autocomplete.css" />
@@ -622,10 +619,7 @@
     <Content Include="Scripts\DataTables\responsive.jqueryui.js" />
     <Content Include="Scripts\DataTables\responsive.jqueryui.min.js" />
     <Content Include="Scripts\Home\home.js" />
-<<<<<<< HEAD
     <Content Include="Scripts\isotope.pkgd.min.js" />
-=======
->>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
     <Content Include="Scripts\jquery-1.12.4.js" />
     <Content Include="Scripts\jquery-1.12.4.min.js" />
     <Content Include="Scripts\jquery-1.12.4.min.map" />
@@ -654,10 +648,6 @@
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
-<<<<<<< HEAD
-=======
-      <SubType>Designer</SubType>
->>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
     </Content>
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -703,10 +693,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-<<<<<<< HEAD
-=======
-    <Folder Include="Content\images\Movies_Popular\" />
->>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
     <Folder Include="Properties\PublishProfiles\" />
     <Folder Include="Scripts\Movies\" />
   </ItemGroup>

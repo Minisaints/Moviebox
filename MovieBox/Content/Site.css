@@ -6,13 +6,9 @@
     font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-<<<<<<< HEAD
 p {
     color: white;
 }
-=======
-p { color: white; }
->>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     font-family: inherit;
@@ -22,30 +18,17 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 
 /* Set padding to keep content from hitting the edges */
-<<<<<<< HEAD
-=======
-
->>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
 }
 
-<<<<<<< HEAD
 .dataTables_info {
     color: #fff;
 }
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
 */
-=======
-.dataTables_info { color: #fff; }
-
-/* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
-*/
-
->>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
 .dl-horizontal dt, .dl-horizontal dd {
     white-space: normal;
     font-size: 18px;
@@ -53,7 +36,6 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 
 /* Set width on the form input elements since they're 100% wide by default */
-<<<<<<< HEAD
 input,
 select,
 textarea {
@@ -96,31 +78,6 @@ label {
 .navbar-inverse .navbar-nav > li > a {
     color: #fff;
 }
-=======
-
-input,
-select,
-textarea { max-width: 280px; }
-
-.Margin { margin-bottom: 10px; }
-
-.btn { font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; }
-
-.field-validation-error,
-label.error { color: red; }
-
-label { color: #fff; }
-
-.checkbox label { padding-left: 0px; }
-
-.checkbox_customer { padding-left: 20px; }
-
-.checkbox_login { padding-left: 0px; }
-
-.input-validation-error { border: 1px solid red; }
-
-.navbar-inverse .navbar-nav > li > a { color: #fff; }
->>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
 
 .navbar-inverse {
     background-color: #a52a2a;
@@ -138,7 +95,6 @@ label { color: #fff; }
     background-color: #a52a2a;
 }
 
-<<<<<<< HEAD
 .navbar {
     border-width: 0 1px 2px 1px;
 }
@@ -158,13 +114,6 @@ label { color: #fff; }
 .navbar-inverse .navbar-toggle .icon-bar {
     background-color: #fff;
 }
-=======
-.navbar { border-width: 0 1px 2px 1px; }
-
-.navbar-inverse .navbar-brand { color: #fff; }
-
-.navbar-brand { font-size: 20px; }
->>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
 
 .navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
     background-color: #333;
@@ -208,13 +157,9 @@ label { color: #fff; }
 }
 
 @media screen and (max-width: 1200px) {
-<<<<<<< HEAD
     .gallery {
         /*display: none;*/
     }
-=======
-    .gallery { display: none; }
->>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
 }
 
 @media (max-width: 767px) {
@@ -223,13 +168,9 @@ label { color: #fff; }
         background-color: #333;
     }
 
-<<<<<<< HEAD
     .navbar-inverse .navbar-nav .open .dropdown-menu > li > a {
         color: #fff;
     }
-=======
-    .navbar-inverse .navbar-nav .open .dropdown-menu > li > a { color: #fff; }
->>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
 }
 
 .list-group-item {
@@ -241,12 +182,8 @@ label { color: #fff; }
 
 .jumbotron {
     background-color: #444;
-<<<<<<< HEAD
     border: 1px solid #222;
     
-=======
-    border: 1px solid #222;    
->>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
 }
 
 .container .jumbotron, .container-fluid .jumbotron {
@@ -270,7 +207,6 @@ label { color: #fff; }
     .jumbotron3 {
         padding-top: 24px;
         padding-bottom: 5px;
-<<<<<<< HEAD
 
     }
 }
@@ -286,16 +222,6 @@ label { color: #fff; }
 td {
     color: #222;
 }
-=======
-    }
-}
-
-.table-hover > tbody { background-color: #fff; }
-
-.table-hover > tbody > tr:hover { background-color: #f5f5f5; }
-
-td { color: #222; }
->>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
 
 tr {
     background-color: #fff;
@@ -305,27 +231,17 @@ tr {
 /***********SMALL MOVIES*************/
 
 .movie_container {
-<<<<<<< HEAD
     /*display: inline-block;*/
     margin-bottom: 2.5px;
     display: flex;
     align-items: center;
     justify-content: center;
-=======
-    display: flex;
-    display: inline-block;
-    margin-bottom: 2.5px;
->>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
 }
 
 .movie {
     width: 200px;
     height: 270px;
-<<<<<<< HEAD
     /*display: inline-block;*/
-=======
-    display: inline-block;
->>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
 }
 
 .frontTitle {
@@ -339,7 +255,6 @@ tr {
     color: #fff;
 }
 
-<<<<<<< HEAD
 .frontTitle_latestRelease {
     
 }
@@ -362,36 +277,14 @@ tr {
 .computer_Container {
     
 }
-=======
-.frontTitle_latestRelease { }
-
-.frontTitle_popularMovies { margin-top: 10px; }
-
-.radio input[type="radio"], .radio-inline input[type="radio"], .checkbox input[type="checkbox"], .checkbox-inline input[type="checkbox"] {
-    margin-left: 0px;
-    margin-left: -20px;
-}
-
-.checkbox_login { margin-left: 20px; }
-
-/**********TEST**********/
-
-.computer_Container { }
->>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
 
 .icon {
     float: right;
     height: 30px;
     width: 30px;
-<<<<<<< HEAD
     background-image:url(images/info.png);
     background-repeat: no-repeat;
     background-size: 30px 30px;  
-=======
-    background-image: url(images/info.png);
-    background-repeat: no-repeat;
-    background-size: 30px 30px;
->>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
     position: absolute;
 }
 
@@ -426,11 +319,6 @@ tr {
 }
 
 .message-tower {
-<<<<<<< HEAD
    right: 240px;
     top: 350px; 
-=======
-    right: 240px;
-    top: 350px;
->>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
 }

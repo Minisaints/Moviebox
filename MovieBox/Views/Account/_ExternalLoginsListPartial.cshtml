@@ -3,44 +3,23 @@
 
 @{
     var loginProviders = Context.GetOwinContext().Authentication.GetExternalAuthenticationTypes();
-<<<<<<< HEAD
     if (loginProviders.Count() == 0) {
-=======
-    if (loginProviders.Count() == 0)
-    {
->>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
         <div>
             <p>
                 There are no external authentication services configured on the server.
             </p>
         </div>
     }
-<<<<<<< HEAD
     else {
         using (Html.BeginForm("ExternalLogin", "Account", new { ReturnUrl = Model.ReturnUrl })) {
             @Html.AntiForgeryToken()
             <div id="socialLoginList">
                 <p>
                     @foreach (AuthenticationDescription p in loginProviders) {
-=======
-    else
-    {
-        using (Html.BeginForm("ExternalLogin", "Account", new {ReturnUrl = Model.ReturnUrl}))
-        {
-            @Html.AntiForgeryToken()
-            <div id="socialLoginList">
-                <p>
-                    @foreach (AuthenticationDescription p in loginProviders)
-                    {
->>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
                         <button type="submit" class="btn btn-facebook" id="@p.AuthenticationType" name="provider" value="@p.AuthenticationType" title="Log in using your @p.Caption account">@p.AuthenticationType</button>
                     }
                 </p>
             </div>
         }
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012

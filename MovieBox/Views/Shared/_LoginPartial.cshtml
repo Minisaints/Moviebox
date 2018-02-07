@@ -1,7 +1,6 @@
 ﻿@using Microsoft.AspNet.Identity
 @if (Request.IsAuthenticated)
 {
-<<<<<<< HEAD
     using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
     {
     @Html.AntiForgeryToken()
@@ -14,24 +13,6 @@
                 <ul class="dropdown-menu">
                     <li>@Html.ActionLink("Account Settings", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Account Settings" })</li>
                     <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
-=======
-    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new {id = "logoutForm", @class = "navbar-right"}))
-    {
-        @Html.AntiForgeryToken()
-
-        <ul class="nav navbar-nav navbar-right">
-
-
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                    @User.Identity.GetUserName()<span class="caret"></span>
-                </a>
-                <ul class="dropdown-menu">
-                    <li>@Html.ActionLink("Account Settings", "Index", "Manage", routeValues: null, htmlAttributes: new {title = "Account Settings"})</li>
-                    <li>
-                        <a href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
-                    </li>
->>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
                 </ul>
             </li>
 
@@ -41,14 +22,7 @@
 else
 {
     <ul class="nav navbar-nav navbar-right">
-<<<<<<< HEAD
         <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
         <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
     </ul>
 }
-=======
-        <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new {id = "registerLink"})</li>
-        <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new {id = "loginLink"})</li>
-    </ul>
-}
->>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012

@@ -24,26 +24,17 @@ namespace MovieBox.Controllers
         // GET: Movie
         public ViewResult Index()
         {
-<<<<<<< HEAD
 
-=======
->>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
             if (User.IsInRole(RoleName.IsAdministrator))
                 return View("List");
 
             return View("ReadOnlyList");
-<<<<<<< HEAD
 
-=======
->>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
         }
 
         public ActionResult Details(int id)
         {
-<<<<<<< HEAD
 
-=======
->>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
             var movie = _context.Movies
                 .Include(g => g.Genre)
                 .SingleOrDefault(c => c.Id == id);
@@ -52,10 +43,7 @@ namespace MovieBox.Controllers
                 return HttpNotFound();
 
             return View(movie);
-<<<<<<< HEAD
 
-=======
->>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
         }
 
         public ActionResult New()
@@ -73,10 +61,7 @@ namespace MovieBox.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Save(Movie movie)
         {
-<<<<<<< HEAD
 
-=======
->>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
             if (!ModelState.IsValid)
             {
                 var viewModel = new MovieFormViewModel()
@@ -103,10 +88,7 @@ namespace MovieBox.Controllers
                 movieInDb.ReleaseDate = movie.ReleaseDate;
                 movieInDb.Stock = movie.Stock;
                 movieInDb.AvailableAmount = movie.Stock;
-<<<<<<< HEAD
 
-=======
->>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
             }
             _context.SaveChanges();
 

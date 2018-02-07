@@ -15,8 +15,4 @@ namespace MovieBox.Migrations
             DropColumn("dbo.Movies", "AvailableAmount");
         }
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012

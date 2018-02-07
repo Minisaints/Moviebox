@@ -40,10 +40,6 @@ namespace MovieBox.Models
         [Required]
         [Display(Name = "Code")]
         public string Code { get; set; }
-<<<<<<< HEAD
-=======
-
->>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
         public string ReturnUrl { get; set; }
 
         [Display(Name = "Remember this browser?")]
@@ -131,8 +127,4 @@ namespace MovieBox.Models
         [Display(Name = "Email")]
         public string Email { get; set; }
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012

@@ -5,7 +5,6 @@
 
 <h2>Customers</h2>
 
-<<<<<<< HEAD
 @Html.ActionLink("Add Customer", "New", "Customers", null, new { @class = "btn btn-primary Margin" })
 
 <table id="rentals" class="table table-bordered table-responsive table-hover">
@@ -19,21 +18,6 @@
         <tbody>
         </tbody>
     </table>
-=======
-@Html.ActionLink("Add Customer", "New", "Customers", null, new {@class = "btn btn-primary Margin"})
-
-<table id="rentals" class="table table-bordered table-responsive table-hover">
-    <thead>
-    <tr>
-        <th>Customer</th>
-        <th>Date of Birth</th>
-        <th>Membership Type</th>
-    </tr>
-    </thead>
-    <tbody>
-    </tbody>
-</table>
->>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
 
 @*}*@
 
@@ -41,7 +25,6 @@
 {
     @*Use jQuery to call out API to remove it from the list.*@
     <script>
-<<<<<<< HEAD
         $(document).ready(function () {
 
             ////////////// customers are fetched from our API
@@ -69,32 +52,3 @@
         });
     </script>
 }
-=======
-        $(document).ready(function() {
-
-            ////////////// customers are fetched from our API
-            var table = $("#rentals").DataTable(
-                {
-                    ajax: {
-                        url: "/api/customers",
-                        dataSrc: ""
-                    },
-                    columns: [
-                        {
-                            data: "name"
-                        },
-                        {
-                            data: "birthDate",
-                            render: function(d) {
-                                return moment(d).format("Do MMMM YYYY");
-                            }
-                        },
-                        {
-                            data: "membershipType.name"
-                        }
-                    ]
-                });
-        });
-    </script>
-}
->>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012

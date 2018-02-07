@@ -5,10 +5,7 @@ namespace MovieBox.Models
 {
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
-<<<<<<< HEAD
 
-=======
->>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Movie> Movies { get; set; }
         public DbSet<Genre> Genres { get; set; }

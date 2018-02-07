@@ -2,10 +2,6 @@
 using Owin;
 
 [assembly: OwinStartupAttribute(typeof(MovieBox.Startup))]
-<<<<<<< HEAD
-=======
-
->>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
 namespace MovieBox
 {
     public partial class Startup
@@ -15,8 +11,4 @@ namespace MovieBox
             ConfigureAuth(app);
         }
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012

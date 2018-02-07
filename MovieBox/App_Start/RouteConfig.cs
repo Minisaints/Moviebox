@@ -22,16 +22,8 @@ namespace MovieBox
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-<<<<<<< HEAD
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
         }
     }
 }
-=======
-                defaults: new {controller = "Home", action = "Index", id = UrlParameter.Optional}
-            );
-        }
-    }
-}
->>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
