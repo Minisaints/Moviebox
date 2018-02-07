@@ -5,20 +5,37 @@
 
 <h2>@ViewBag.Title.</h2>
 
+<<<<<<< HEAD
 @using (Html.BeginForm("SendCode", "Account", new { ReturnUrl = Model.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" })) {
     @Html.AntiForgeryToken()
     @Html.Hidden("rememberMe", @Model.RememberMe)
     <h4>Send verification code</h4>
     <hr />
+=======
+@using (Html.BeginForm("SendCode", "Account", new {ReturnUrl = Model.ReturnUrl}, FormMethod.Post, new {@class = "form-horizontal", role = "form"}))
+{
+    @Html.AntiForgeryToken()
+    @Html.Hidden("rememberMe", @Model.RememberMe)
+    <h4>Send verification code</h4>
+    <hr/>
+>>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
     <div class="row">
         <div class="col-md-8">
             Select Two-Factor Authentication Provider:
             @Html.DropDownListFor(model => model.SelectedProvider, Model.Providers)
+<<<<<<< HEAD
             <input type="submit" value="Submit" class="btn btn-default" />
+=======
+            <input type="submit" value="Submit" class="btn btn-default"/>
+>>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
         </div>
     </div>
 }
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012

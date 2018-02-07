@@ -7,7 +7,11 @@ namespace MovieBox.Models
     {
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
+<<<<<<< HEAD
             var customer = (Customer)validationContext.ObjectInstance;
+=======
+            var customer = (Customer) validationContext.ObjectInstance;
+>>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
 
             if (customer.MembershipTypeId == MembershipType.Unknown ||
                 customer.MembershipTypeId == MembershipType.PayAsYouGo)

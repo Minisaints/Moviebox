@@ -30,9 +30,16 @@ namespace MovieBox
                 {
                     // Enables the application to validate the security stamp when the user logs in.
                     // This is a security feature which is used when you change a password or add an external login to your account.  
+<<<<<<< HEAD
                     OnValidateIdentity = SecurityStampValidator.OnValidateIdentity<ApplicationUserManager, ApplicationUser>(
                         validateInterval: TimeSpan.FromMinutes(30),
                         regenerateIdentity: (manager, user) => user.GenerateUserIdentityAsync(manager))
+=======
+                    OnValidateIdentity = SecurityStampValidator
+                        .OnValidateIdentity<ApplicationUserManager, ApplicationUser>(
+                            validateInterval: TimeSpan.FromMinutes(30),
+                            regenerateIdentity: (manager, user) => user.GenerateUserIdentityAsync(manager))
+>>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
                 }
             });
             app.UseExternalSignInCookie(DefaultAuthenticationTypes.ExternalCookie);
@@ -55,8 +62,13 @@ namespace MovieBox
             //   consumerSecret: "");
 
             app.UseFacebookAuthentication(
+<<<<<<< HEAD
                appId: ConfigurationManager.AppSettings["FacebookAppId"],
                appSecret: ConfigurationManager.AppSettings["FacebookAppSecret"]);
+=======
+                appId: ConfigurationManager.AppSettings["FacebookAppId"],
+                appSecret: ConfigurationManager.AppSettings["FacebookAppSecret"]);
+>>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{

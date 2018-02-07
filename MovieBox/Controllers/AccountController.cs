@@ -25,6 +25,7 @@ namespace MovieBox.Controllers
             SignInManager = signInManager;
         }
 
+<<<<<<< HEAD
         public ApplicationSignInManager SignInManager {
             get {
                 return _signInManager ?? HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
@@ -41,6 +42,18 @@ namespace MovieBox.Controllers
             private set {
                 _userManager = value;
             }
+=======
+        public ApplicationSignInManager SignInManager
+        {
+            get { return _signInManager ?? HttpContext.GetOwinContext().Get<ApplicationSignInManager>(); }
+            private set { _signInManager = value; }
+        }
+
+        public ApplicationUserManager UserManager
+        {
+            get { return _userManager ?? HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>(); }
+            private set { _userManager = value; }
+>>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
         }
 
         //
@@ -66,7 +79,13 @@ namespace MovieBox.Controllers
 
             // This doesn't count login failures towards account lockout
             // To enable password failures to trigger account lockout, change to shouldLockout: true
+<<<<<<< HEAD
             var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
+=======
+            var result =
+                await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe,
+                    shouldLockout: false);
+>>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
             switch (result)
             {
                 case SignInStatus.Success:
@@ -74,7 +93,11 @@ namespace MovieBox.Controllers
                 case SignInStatus.LockedOut:
                     return View("Lockout");
                 case SignInStatus.RequiresVerification:
+<<<<<<< HEAD
                     return RedirectToAction("SendCode", new { ReturnUrl = returnUrl, RememberMe = model.RememberMe });
+=======
+                    return RedirectToAction("SendCode", new {ReturnUrl = returnUrl, RememberMe = model.RememberMe});
+>>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
                 case SignInStatus.Failure:
                 default:
                     ModelState.AddModelError("", "Invalid login attempt.");
@@ -92,7 +115,11 @@ namespace MovieBox.Controllers
             {
                 return View("Error");
             }
+<<<<<<< HEAD
             return View(new VerifyCodeViewModel { Provider = provider, ReturnUrl = returnUrl, RememberMe = rememberMe });
+=======
+            return View(new VerifyCodeViewModel {Provider = provider, ReturnUrl = returnUrl, RememberMe = rememberMe});
+>>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
         }
 
         //
@@ -111,7 +138,12 @@ namespace MovieBox.Controllers
             // If a user enters incorrect codes for a specified amount of time then the user account 
             // will be locked out for a specified amount of time. 
             // You can configure the account lockout settings in IdentityConfig
+<<<<<<< HEAD
             var result = await SignInManager.TwoFactorSignInAsync(model.Provider, model.Code, isPersistent: model.RememberMe, rememberBrowser: model.RememberBrowser);
+=======
+            var result = await SignInManager.TwoFactorSignInAsync(model.Provider, model.Code,
+                isPersistent: model.RememberMe, rememberBrowser: model.RememberBrowser);
+>>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
             switch (result)
             {
                 case SignInStatus.Success:
@@ -282,7 +314,12 @@ namespace MovieBox.Controllers
         public ActionResult ExternalLogin(string provider, string returnUrl)
         {
             // Request a redirect to the external login provider
+<<<<<<< HEAD
             return new ChallengeResult(provider, Url.Action("ExternalLoginCallback", "Account", new { ReturnUrl = returnUrl }));
+=======
+            return new ChallengeResult(provider,
+                Url.Action("ExternalLoginCallback", "Account", new {ReturnUrl = returnUrl}));
+>>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
         }
 
         //
@@ -296,8 +333,19 @@ namespace MovieBox.Controllers
                 return View("Error");
             }
             var userFactors = await UserManager.GetValidTwoFactorProvidersAsync(userId);
+<<<<<<< HEAD
             var factorOptions = userFactors.Select(purpose => new SelectListItem { Text = purpose, Value = purpose }).ToList();
             return View(new SendCodeViewModel { Providers = factorOptions, ReturnUrl = returnUrl, RememberMe = rememberMe });
+=======
+            var factorOptions = userFactors.Select(purpose => new SelectListItem {Text = purpose, Value = purpose})
+                .ToList();
+            return View(new SendCodeViewModel
+            {
+                Providers = factorOptions,
+                ReturnUrl = returnUrl,
+                RememberMe = rememberMe
+            });
+>>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
         }
 
         //
@@ -317,7 +365,12 @@ namespace MovieBox.Controllers
             {
                 return View("Error");
             }
+<<<<<<< HEAD
             return RedirectToAction("VerifyCode", new { Provider = model.SelectedProvider, ReturnUrl = model.ReturnUrl, RememberMe = model.RememberMe });
+=======
+            return RedirectToAction("VerifyCode",
+                new {Provider = model.SelectedProvider, ReturnUrl = model.ReturnUrl, RememberMe = model.RememberMe});
+>>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
         }
 
         //
@@ -340,13 +393,22 @@ namespace MovieBox.Controllers
                 case SignInStatus.LockedOut:
                     return View("Lockout");
                 case SignInStatus.RequiresVerification:
+<<<<<<< HEAD
                     return RedirectToAction("SendCode", new { ReturnUrl = returnUrl, RememberMe = false });
+=======
+                    return RedirectToAction("SendCode", new {ReturnUrl = returnUrl, RememberMe = false});
+>>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
                 case SignInStatus.Failure:
                 default:
                     // If the user does not have an account, then prompt the user to create an account
                     ViewBag.ReturnUrl = returnUrl;
                     ViewBag.LoginProvider = loginInfo.Login.LoginProvider;
+<<<<<<< HEAD
                     return View("ExternalLoginConfirmation", new ExternalLoginConfirmationViewModel { Email = loginInfo.Email });
+=======
+                    return View("ExternalLoginConfirmation",
+                        new ExternalLoginConfirmationViewModel {Email = loginInfo.Email});
+>>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
             }
         }
 
@@ -355,7 +417,12 @@ namespace MovieBox.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
+<<<<<<< HEAD
         public async Task<ActionResult> ExternalLoginConfirmation(ExternalLoginConfirmationViewModel model, string returnUrl)
+=======
+        public async Task<ActionResult> ExternalLoginConfirmation(ExternalLoginConfirmationViewModel model,
+            string returnUrl)
+>>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
         {
             if (User.Identity.IsAuthenticated)
             {
@@ -433,6 +500,7 @@ namespace MovieBox.Controllers
         }
 
         #region Helpers
+<<<<<<< HEAD
         // Used for XSRF protection when adding external logins
         private const string XsrfKey = "XsrfId";
 
@@ -440,6 +508,15 @@ namespace MovieBox.Controllers
             get {
                 return HttpContext.GetOwinContext().Authentication;
             }
+=======
+
+        // Used for XSRF protection when adding external logins
+        private const string XsrfKey = "XsrfId";
+
+        private IAuthenticationManager AuthenticationManager
+        {
+            get { return HttpContext.GetOwinContext().Authentication; }
+>>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
         }
 
         private void AddErrors(IdentityResult result)
@@ -479,7 +556,11 @@ namespace MovieBox.Controllers
 
             public override void ExecuteResult(ControllerContext context)
             {
+<<<<<<< HEAD
                 var properties = new AuthenticationProperties { RedirectUri = RedirectUri };
+=======
+                var properties = new AuthenticationProperties {RedirectUri = RedirectUri};
+>>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
                 if (UserId != null)
                 {
                     properties.Dictionary[XsrfKey] = UserId;
@@ -487,6 +568,10 @@ namespace MovieBox.Controllers
                 context.HttpContext.GetOwinContext().Authentication.Challenge(properties, LoginProvider);
             }
         }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
         #endregion
     }
 }

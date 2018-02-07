@@ -12,6 +12,10 @@ namespace MovieBox.Models
         [Required]
         [StringLength(100)]
         public string DrivingLicence { get; set; }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType

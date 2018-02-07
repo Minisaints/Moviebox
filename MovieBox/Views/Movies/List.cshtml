@@ -5,12 +5,17 @@
 
 <h1>Movies</h1>
 
+<<<<<<< HEAD
 @Html.ActionLink("Add Movie", "New", "Movies", null, new { @class = "btn btn-primary Margin" })
+=======
+@Html.ActionLink("Add Movie", "New", "Movies", null, new {@class = "btn btn-primary Margin"})
+>>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
 
 <div class="jumbotron jumbotron2">
 
     <table id="movies" class="table table-bordered table-responsive table-hover">
         <thead>
+<<<<<<< HEAD
             <tr>
                 <th>Movies</th>
                 <th>Genre</th>
@@ -18,6 +23,15 @@
                 <th style="width: 80px">Available</th>
                 <th style="width: 40px; text-align: center">Delete</th>
             </tr>
+=======
+        <tr>
+            <th>Movies</th>
+            <th>Genre</th>
+            <th>Release Date</th>
+            <th style="width: 80px">Available</th>
+            <th style="width: 40px; text-align: center">Delete</th>
+        </tr>
+>>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
         </thead>
         <tbody></tbody>
     </table>
@@ -26,7 +40,11 @@
 {
     @*Use jQuery to call out API to remove it from the list.*@
     <script>
+<<<<<<< HEAD
         $(document).ready(function () {
+=======
+        $(document).ready(function() {
+>>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
 
             ////////////// movies are fetched from our API
             var table = $("#movies").DataTable(
@@ -38,7 +56,11 @@
                     columns: [
                         {
                             data: "name",
+<<<<<<< HEAD
                             render: function (data, type, movie) {
+=======
+                            render: function(data, type, movie) {
+>>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
                                 return "<a href='/movies/edit/" + movie.id + "'>" + movie.name + "</a>";
                             }
 
@@ -48,7 +70,11 @@
                         },
                         {
                             data: "releaseDate",
+<<<<<<< HEAD
                             render: function (d) {
+=======
+                            render: function(d) {
+>>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
                                 return moment(d).format("Do MMMM YYYY");
                             }
                         },
@@ -58,8 +84,15 @@
                         {
                             data: "id",
                             orderable: false,
+<<<<<<< HEAD
                             render: function (data) {
                                 return "<button class='btn btn-danger btn-sm js-delete' data-movie-id=" + data + ">Delete</button>";
+=======
+                            render: function(data) {
+                                return "<button class='btn btn-danger btn-sm js-delete' data-movie-id=" +
+                                    data +
+                                    ">Delete</button>";
+>>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
                             }
                         }
                     ]
@@ -67,6 +100,7 @@
 
             //////////////////////////////////////////////////
 
+<<<<<<< HEAD
             $("#movies").on("click", ".js-delete",
                 function () {
                     var button = $(this);
@@ -91,3 +125,31 @@
         });
     </script>
 }
+=======
+            $("#movies").on("click",
+                ".js-delete",
+                function() {
+                    var button = $(this);
+
+                    bootbox.confirm("Are you sure you want to delete the movie?",
+                        function(result) {
+                            if (result) {
+                                $.ajax({
+                                    url: "/api/movies/" + button.attr("data-movie-id"),
+                                    method: "DELETE",
+                                    success: function() {
+                                        toastr.success("Movie record deleted.");
+                                        table.row(button.parents("tr")).remove().draw();
+                                    },
+                                    error: function() {
+                                        toastr.error("Unable to delete Movie record.");
+
+                                    }
+                                });
+                            }
+                        });
+                });
+        });
+    </script>
+}
+>>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012

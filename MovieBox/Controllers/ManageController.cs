@@ -25,6 +25,7 @@ namespace MovieBox.Controllers
             SignInManager = signInManager;
         }
 
+<<<<<<< HEAD
         public ApplicationSignInManager SignInManager {
             get {
                 return _signInManager ?? HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
@@ -41,6 +42,18 @@ namespace MovieBox.Controllers
             private set {
                 _userManager = value;
             }
+=======
+        public ApplicationSignInManager SignInManager
+        {
+            get { return _signInManager ?? HttpContext.GetOwinContext().Get<ApplicationSignInManager>(); }
+            private set { _signInManager = value; }
+        }
+
+        public ApplicationUserManager UserManager
+        {
+            get { return _userManager ?? HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>(); }
+            private set { _userManager = value; }
+>>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
         }
 
         //
@@ -48,6 +61,7 @@ namespace MovieBox.Controllers
         public async Task<ActionResult> Index(ManageMessageId? message)
         {
             ViewBag.StatusMessage =
+<<<<<<< HEAD
                 message == ManageMessageId.ChangePasswordSuccess ? "Your password has been changed."
                 : message == ManageMessageId.SetPasswordSuccess ? "Your password has been set."
                 : message == ManageMessageId.SetTwoFactorSuccess ? "Your two-factor authentication provider has been set."
@@ -55,6 +69,21 @@ namespace MovieBox.Controllers
                 : message == ManageMessageId.AddPhoneSuccess ? "Your phone number was added."
                 : message == ManageMessageId.RemovePhoneSuccess ? "Your phone number was removed."
                 : "";
+=======
+                message == ManageMessageId.ChangePasswordSuccess
+                    ? "Your password has been changed."
+                    : message == ManageMessageId.SetPasswordSuccess
+                        ? "Your password has been set."
+                        : message == ManageMessageId.SetTwoFactorSuccess
+                            ? "Your two-factor authentication provider has been set."
+                            : message == ManageMessageId.Error
+                                ? "An error has occurred."
+                                : message == ManageMessageId.AddPhoneSuccess
+                                    ? "Your phone number was added."
+                                    : message == ManageMessageId.RemovePhoneSuccess
+                                        ? "Your phone number was removed."
+                                        : "";
+>>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
 
             var userId = User.Identity.GetUserId();
             var model = new IndexViewModel
@@ -75,7 +104,12 @@ namespace MovieBox.Controllers
         public async Task<ActionResult> RemoveLogin(string loginProvider, string providerKey)
         {
             ManageMessageId? message;
+<<<<<<< HEAD
             var result = await UserManager.RemoveLoginAsync(User.Identity.GetUserId(), new UserLoginInfo(loginProvider, providerKey));
+=======
+            var result = await UserManager.RemoveLoginAsync(User.Identity.GetUserId(),
+                new UserLoginInfo(loginProvider, providerKey));
+>>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
             if (result.Succeeded)
             {
                 var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
@@ -89,7 +123,11 @@ namespace MovieBox.Controllers
             {
                 message = ManageMessageId.Error;
             }
+<<<<<<< HEAD
             return RedirectToAction("ManageLogins", new { Message = message });
+=======
+            return RedirectToAction("ManageLogins", new {Message = message});
+>>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
         }
 
         //
@@ -120,7 +158,11 @@ namespace MovieBox.Controllers
                 };
                 await UserManager.SmsService.SendAsync(message);
             }
+<<<<<<< HEAD
             return RedirectToAction("VerifyPhoneNumber", new { PhoneNumber = model.Number });
+=======
+            return RedirectToAction("VerifyPhoneNumber", new {PhoneNumber = model.Number});
+>>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
         }
 
         //
@@ -159,7 +201,13 @@ namespace MovieBox.Controllers
         {
             var code = await UserManager.GenerateChangePhoneNumberTokenAsync(User.Identity.GetUserId(), phoneNumber);
             // Send an SMS through the SMS provider to verify the phone number
+<<<<<<< HEAD
             return phoneNumber == null ? View("Error") : View(new VerifyPhoneNumberViewModel { PhoneNumber = phoneNumber });
+=======
+            return phoneNumber == null
+                ? View("Error")
+                : View(new VerifyPhoneNumberViewModel {PhoneNumber = phoneNumber});
+>>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
         }
 
         //
@@ -172,7 +220,12 @@ namespace MovieBox.Controllers
             {
                 return View(model);
             }
+<<<<<<< HEAD
             var result = await UserManager.ChangePhoneNumberAsync(User.Identity.GetUserId(), model.PhoneNumber, model.Code);
+=======
+            var result =
+                await UserManager.ChangePhoneNumberAsync(User.Identity.GetUserId(), model.PhoneNumber, model.Code);
+>>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
             if (result.Succeeded)
             {
                 var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
@@ -180,7 +233,11 @@ namespace MovieBox.Controllers
                 {
                     await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
                 }
+<<<<<<< HEAD
                 return RedirectToAction("Index", new { Message = ManageMessageId.AddPhoneSuccess });
+=======
+                return RedirectToAction("Index", new {Message = ManageMessageId.AddPhoneSuccess});
+>>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
             }
             // If we got this far, something failed, redisplay form
             ModelState.AddModelError("", "Failed to verify phone");
@@ -196,14 +253,22 @@ namespace MovieBox.Controllers
             var result = await UserManager.SetPhoneNumberAsync(User.Identity.GetUserId(), null);
             if (!result.Succeeded)
             {
+<<<<<<< HEAD
                 return RedirectToAction("Index", new { Message = ManageMessageId.Error });
+=======
+                return RedirectToAction("Index", new {Message = ManageMessageId.Error});
+>>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
             }
             var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
             if (user != null)
             {
                 await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
             }
+<<<<<<< HEAD
             return RedirectToAction("Index", new { Message = ManageMessageId.RemovePhoneSuccess });
+=======
+            return RedirectToAction("Index", new {Message = ManageMessageId.RemovePhoneSuccess});
+>>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
         }
 
         //
@@ -223,7 +288,12 @@ namespace MovieBox.Controllers
             {
                 return View(model);
             }
+<<<<<<< HEAD
             var result = await UserManager.ChangePasswordAsync(User.Identity.GetUserId(), model.OldPassword, model.NewPassword);
+=======
+            var result =
+                await UserManager.ChangePasswordAsync(User.Identity.GetUserId(), model.OldPassword, model.NewPassword);
+>>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
             if (result.Succeeded)
             {
                 var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
@@ -231,7 +301,11 @@ namespace MovieBox.Controllers
                 {
                     await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
                 }
+<<<<<<< HEAD
                 return RedirectToAction("Index", new { Message = ManageMessageId.ChangePasswordSuccess });
+=======
+                return RedirectToAction("Index", new {Message = ManageMessageId.ChangePasswordSuccess});
+>>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
             }
             AddErrors(result);
             return View(model);
@@ -260,7 +334,11 @@ namespace MovieBox.Controllers
                     {
                         await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
                     }
+<<<<<<< HEAD
                     return RedirectToAction("Index", new { Message = ManageMessageId.SetPasswordSuccess });
+=======
+                    return RedirectToAction("Index", new {Message = ManageMessageId.SetPasswordSuccess});
+>>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
                 }
                 AddErrors(result);
             }
@@ -274,16 +352,29 @@ namespace MovieBox.Controllers
         public async Task<ActionResult> ManageLogins(ManageMessageId? message)
         {
             ViewBag.StatusMessage =
+<<<<<<< HEAD
                 message == ManageMessageId.RemoveLoginSuccess ? "The external login was removed."
                 : message == ManageMessageId.Error ? "An error has occurred."
                 : "";
+=======
+                message == ManageMessageId.RemoveLoginSuccess
+                    ? "The external login was removed."
+                    : message == ManageMessageId.Error
+                        ? "An error has occurred."
+                        : "";
+>>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
             var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
             if (user == null)
             {
                 return View("Error");
             }
             var userLogins = await UserManager.GetLoginsAsync(User.Identity.GetUserId());
+<<<<<<< HEAD
             var otherLogins = AuthenticationManager.GetExternalAuthenticationTypes().Where(auth => userLogins.All(ul => auth.AuthenticationType != ul.LoginProvider)).ToList();
+=======
+            var otherLogins = AuthenticationManager.GetExternalAuthenticationTypes()
+                .Where(auth => userLogins.All(ul => auth.AuthenticationType != ul.LoginProvider)).ToList();
+>>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
             ViewBag.ShowRemoveButton = user.PasswordHash != null || userLogins.Count > 1;
             return View(new ManageLoginsViewModel
             {
@@ -299,7 +390,12 @@ namespace MovieBox.Controllers
         public ActionResult LinkLogin(string provider)
         {
             // Request a redirect to the external login provider to link a login for the current user
+<<<<<<< HEAD
             return new AccountController.ChallengeResult(provider, Url.Action("LinkLoginCallback", "Manage"), User.Identity.GetUserId());
+=======
+            return new AccountController.ChallengeResult(provider, Url.Action("LinkLoginCallback", "Manage"),
+                User.Identity.GetUserId());
+>>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
         }
 
         //
@@ -309,10 +405,19 @@ namespace MovieBox.Controllers
             var loginInfo = await AuthenticationManager.GetExternalLoginInfoAsync(XsrfKey, User.Identity.GetUserId());
             if (loginInfo == null)
             {
+<<<<<<< HEAD
                 return RedirectToAction("ManageLogins", new { Message = ManageMessageId.Error });
             }
             var result = await UserManager.AddLoginAsync(User.Identity.GetUserId(), loginInfo.Login);
             return result.Succeeded ? RedirectToAction("ManageLogins") : RedirectToAction("ManageLogins", new { Message = ManageMessageId.Error });
+=======
+                return RedirectToAction("ManageLogins", new {Message = ManageMessageId.Error});
+            }
+            var result = await UserManager.AddLoginAsync(User.Identity.GetUserId(), loginInfo.Login);
+            return result.Succeeded
+                ? RedirectToAction("ManageLogins")
+                : RedirectToAction("ManageLogins", new {Message = ManageMessageId.Error});
+>>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
         }
 
         protected override void Dispose(bool disposing)
@@ -327,6 +432,7 @@ namespace MovieBox.Controllers
         }
 
         #region Helpers
+<<<<<<< HEAD
         // Used for XSRF protection when adding external logins
         private const string XsrfKey = "XsrfId";
 
@@ -334,6 +440,15 @@ namespace MovieBox.Controllers
             get {
                 return HttpContext.GetOwinContext().Authentication;
             }
+=======
+
+        // Used for XSRF protection when adding external logins
+        private const string XsrfKey = "XsrfId";
+
+        private IAuthenticationManager AuthenticationManager
+        {
+            get { return HttpContext.GetOwinContext().Authentication; }
+>>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
         }
 
         private void AddErrors(IdentityResult result)

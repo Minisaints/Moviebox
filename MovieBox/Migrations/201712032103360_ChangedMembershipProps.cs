@@ -16,4 +16,8 @@ namespace MovieBox.Migrations
             AlterColumn("dbo.MembershipTypes", "MembershipName", c => c.String());
         }
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012

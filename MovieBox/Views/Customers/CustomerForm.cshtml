@@ -20,17 +20,29 @@
 
     <div class="form-group">
         @Html.LabelFor(a => a.Customer.Name)
+<<<<<<< HEAD
         @Html.TextBoxFor(a => a.Customer.Name, new { @class = "form-control" })
+=======
+        @Html.TextBoxFor(a => a.Customer.Name, new {@class = "form-control"})
+>>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
         @Html.ValidationMessageFor(m => m.Customer.Name)
     </div>
     <div class="form-group">
         @Html.LabelFor(a => a.Customer.MembershipTypeId)
+<<<<<<< HEAD
         @Html.DropDownListFor(a => a.Customer.MembershipTypeId, new SelectList(Model.MembershipType, "Id", "Name"), "Select Membership Type", new { @class = "form-control" })
+=======
+        @Html.DropDownListFor(a => a.Customer.MembershipTypeId, new SelectList(Model.MembershipType, "Id", "Name"), "Select Membership Type", new {@class = "form-control"})
+>>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
         @Html.ValidationMessageFor(m => m.Customer.MembershipTypeId)
     </div>
     <div class="form-group">
         @Html.LabelFor(a => a.Customer.BirthDate)
+<<<<<<< HEAD
         @Html.TextBoxFor(a => a.Customer.BirthDate, "{0:d MMM yyyy}", new { @class = "form-control" })
+=======
+        @Html.TextBoxFor(a => a.Customer.BirthDate, "{0:d MMM yyyy}", new {@class = "form-control"})
+>>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
         @Html.ValidationMessageFor(m => m.Customer.BirthDate)
 
     </div>
@@ -48,4 +60,8 @@
 @section scripts {
     @*enable client-side validation*@
     @Scripts.Render("~/bundles/jqueryval")
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 9571c89b8f2096dfc4c400bc6edff1b4871fe012
